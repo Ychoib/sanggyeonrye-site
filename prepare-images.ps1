@@ -9,6 +9,10 @@ Add-Type -AssemblyName System.Drawing
 
 $sourceDir = Join-Path $PSScriptRoot "image"
 $outputDir = Join-Path $sourceDir "web"
+$downloadRoot = Join-Path $env:USERPROFILE "Downloads"
+$extraPhotoDir = Get-ChildItem $downloadRoot -Directory -ErrorAction SilentlyContinue |
+  Where-Object { $_.Name -like "260207*" } |
+  Select-Object -ExpandProperty FullName -First 1
 
 New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
 
@@ -39,11 +43,18 @@ function Set-ImageOrientation {
 function Save-WebImage {
   param(
     [string]$SourceName,
+    [string]$SourcePath,
     [string]$OutputName,
     [int]$LongEdge = $DefaultLongEdge
   )
 
-  $sourcePath = Join-Path $sourceDir $SourceName
+  if ($SourcePath) {
+    $sourcePath = $SourcePath
+  }
+  else {
+    $sourcePath = Join-Path $sourceDir $SourceName
+  }
+
   $outputPath = Join-Path $outputDir $OutputName
 
   if (-not (Test-Path $sourcePath)) {
@@ -114,8 +125,17 @@ $images = @(
   @{ Source = "KakaoTalk_20260313_232730849_06.jpg"; Output = "moment-detail.jpg"; LongEdge = 1600 }
 )
 
+if ($extraPhotoDir) {
+  $images += @(
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0001.jpg"); Output = "backdrop-hero.jpg"; LongEdge = 1800 }
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0080.jpg"); Output = "backdrop-bloom.jpg"; LongEdge = 1800 }
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_1015.jpg"); Output = "backdrop-closing.jpg"; LongEdge = 1800 }
+  )
+}
+
 foreach ($item in $images) {
   $sourceName = $item.Source
+  $sourcePath = $item.SourcePath
 
   if ($item.ContainsKey("SourcePattern")) {
     $sourceName = Get-ChildItem $sourceDir -File -Filter $item.SourcePattern |
@@ -127,5 +147,5 @@ foreach ($item in $images) {
     }
   }
 
-  Save-WebImage -SourceName $sourceName -OutputName $item.Output -LongEdge $item.LongEdge
+  Save-WebImage -SourceName $sourceName -SourcePath $sourcePath -OutputName $item.Output -LongEdge $item.LongEdge
 }
