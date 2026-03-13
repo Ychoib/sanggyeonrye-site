@@ -67,6 +67,67 @@ body::before {
   overflow: hidden;
 }
 
+.memory-backdrop {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.memory-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(253, 244, 241, 0.2), rgba(253, 244, 241, 0.06) 26%, rgba(253, 244, 241, 0.12) 62%, rgba(253, 244, 241, 0.24)),
+    radial-gradient(circle at 50% 20%, rgba(255, 251, 248, 0.06), transparent 36%);
+}
+
+.memory-backdrop__photo {
+  position: absolute;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 40px;
+  opacity: 0.22;
+  filter: blur(3px) saturate(0.86);
+  box-shadow: 0 28px 80px rgba(98, 70, 76, 0.12);
+}
+
+.memory-backdrop__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 250, 247, 0.16), rgba(255, 250, 247, 0.34));
+}
+
+.memory-backdrop__photo--one {
+  top: 110px;
+  left: -36px;
+  width: min(24vw, 290px);
+  aspect-ratio: 0.76;
+  transform: rotate(-8deg);
+}
+
+.memory-backdrop__photo--two {
+  top: 38%;
+  right: -32px;
+  width: min(25vw, 310px);
+  aspect-ratio: 0.78;
+  transform: rotate(9deg);
+}
+
+.memory-backdrop__photo--three {
+  left: 4%;
+  bottom: 5%;
+  width: min(22vw, 260px);
+  aspect-ratio: 0.76;
+  transform: rotate(-6deg);
+}
+
 .ambient-lights__orb,
 .ambient-lights__spark {
   position: absolute;
@@ -315,8 +376,8 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(12px) saturate(0.9);
-  opacity: 0.15;
+  filter: blur(10px) saturate(0.9);
+  opacity: 0.18;
   border-radius: 32px;
   mix-blend-mode: normal;
   mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 18%, rgba(0, 0, 0, 0.9) 82%, transparent);
@@ -1293,6 +1354,25 @@ main {
     filter: blur(10px) saturate(0.88);
   }
 
+  .memory-backdrop__photo {
+    opacity: 0.16;
+  }
+
+  .memory-backdrop__photo--one {
+    left: -56px;
+    width: min(30vw, 250px);
+  }
+
+  .memory-backdrop__photo--two {
+    right: -58px;
+    width: min(32vw, 260px);
+  }
+
+  .memory-backdrop__photo--three {
+    left: -22px;
+    width: min(28vw, 210px);
+  }
+
   .hero__glow--sage {
     left: -30px;
   }
@@ -1359,6 +1439,34 @@ main {
 
   .section-veil__photo {
     opacity: 0.08;
+  }
+
+  .memory-backdrop__photo {
+    opacity: 0.12;
+    filter: blur(2px) saturate(0.82);
+  }
+
+  .memory-backdrop__photo--one,
+  .memory-backdrop__photo--two,
+  .memory-backdrop__photo--three {
+    width: 38vw;
+    max-width: 180px;
+    border-radius: 28px;
+  }
+
+  .memory-backdrop__photo--one {
+    top: 80px;
+    left: -44px;
+  }
+
+  .memory-backdrop__photo--two {
+    top: 40%;
+    right: -50px;
+  }
+
+  .memory-backdrop__photo--three {
+    left: -36px;
+    bottom: 8%;
   }
 
   .section-veil--hero .section-veil__photo--left,
@@ -1456,6 +1564,7 @@ main {
 
   .ambient-lights__orb,
   .ambient-lights__spark,
+  .memory-backdrop__photo,
   .hero__glow,
   .hero__sparkles span,
   .section::before {

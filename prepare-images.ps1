@@ -13,6 +13,9 @@ $downloadRoot = Join-Path $env:USERPROFILE "Downloads"
 $extraPhotoDir = Get-ChildItem $downloadRoot -Directory -ErrorAction SilentlyContinue |
   Where-Object { $_.Name -like "260207*" } |
   Select-Object -ExpandProperty FullName -First 1
+$dailyPhotoDir = Get-ChildItem $sourceDir -Directory -ErrorAction SilentlyContinue |
+  Where-Object { $_.Name -ne "web" } |
+  Select-Object -ExpandProperty FullName -First 1
 
 New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
 
@@ -130,6 +133,14 @@ if ($extraPhotoDir) {
     @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0001.jpg"); Output = "backdrop-hero.jpg"; LongEdge = 1800 }
     @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0080.jpg"); Output = "backdrop-bloom.jpg"; LongEdge = 1800 }
     @{ SourcePath = (Join-Path $extraPhotoDir "DOO_1015.jpg"); Output = "backdrop-closing.jpg"; LongEdge = 1800 }
+  )
+}
+
+if ($dailyPhotoDir) {
+  $images += @(
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_02.jpg"); Output = "daily-backdrop-1.jpg"; LongEdge = 1400 }
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_03.jpg"); Output = "daily-backdrop-2.jpg"; LongEdge = 1400 }
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_01.jpg"); Output = "daily-backdrop-3.jpg"; LongEdge = 1400 }
   )
 }
 
