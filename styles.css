@@ -861,6 +861,7 @@ main {
   border: 1px solid rgba(202, 168, 177, 0.18);
   box-shadow: 0 16px 34px rgba(111, 77, 83, 0.06);
   backdrop-filter: blur(16px);
+  text-align: center;
 }
 
 .overview-card::before {
@@ -873,6 +874,7 @@ main {
 
 .overview-card__heading {
   max-width: 720px;
+  margin-inline: auto;
   margin-bottom: 10px;
 }
 
@@ -903,13 +905,15 @@ main {
   display: grid;
   gap: 2px;
   margin-top: 14px;
+  justify-items: center;
 }
 
 .overview-link {
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  align-items: start;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
   gap: 8px;
+  width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid rgba(202, 168, 177, 0.16);
   color: inherit;
@@ -928,7 +932,6 @@ main {
 .overview-link:focus-visible {
   color: var(--accent);
   border-color: rgba(140, 96, 108, 0.28);
-  transform: translateX(2px);
 }
 
 .overview-link__index {
@@ -943,7 +946,6 @@ main {
 }
 
 .overview-link strong {
-  grid-column: 2;
   font-family: "Noto Serif KR", serif;
   font-size: 1.02rem;
   font-weight: 600;
@@ -2351,8 +2353,8 @@ main {
   }
 
   .overview-link {
-    display: grid;
-    grid-template-columns: 32px minmax(0, 1fr);
+    display: inline-flex;
+    justify-content: center;
     gap: 8px;
     padding: 9px 0;
   }
