@@ -1,0 +1,8 @@
+*.log
+mockup-*.png
+server-*.log
+localtunnel*.log
+localhostrun*.log
+tunnel-runner*.log
+tunnel-runner.js
+shareable.html

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상견례 소개 시안</title>
+    <meta
+      name="description"
+      content="상견례 자리에서 부모님께 보여드리는 두 사람의 소개 페이지 시안"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <p class="topbar__label">A Promise in Bloom</p>
+        <nav class="topbar__nav" aria-label="섹션 이동">
+          <a href="#hero" data-section-link>인사</a>
+          <a href="#profiles" data-section-link>소개</a>
+          <a href="#story" data-section-link>이야기</a>
+          <a href="#values" data-section-link>마음</a>
+          <a href="#plans" data-section-link>예식</a>
+          <a href="#closing" data-section-link>마무리</a>
+        </nav>
+      </header>
+
+      <div class="ambient-lights" aria-hidden="true">
+        <span class="ambient-lights__orb ambient-lights__orb--1"></span>
+        <span class="ambient-lights__orb ambient-lights__orb--2"></span>
+        <span class="ambient-lights__orb ambient-lights__orb--3"></span>
+        <span class="ambient-lights__spark ambient-lights__spark--1"></span>
+        <span class="ambient-lights__spark ambient-lights__spark--2"></span>
+        <span class="ambient-lights__spark ambient-lights__spark--3"></span>
+        <span class="ambient-lights__spark ambient-lights__spark--4"></span>
+      </div>
+
+      <aside class="progress-dots" aria-label="현재 섹션">
+        <a href="#hero" data-section-link aria-label="인사"></a>
+        <a href="#profiles" data-section-link aria-label="소개"></a>
+        <a href="#story" data-section-link aria-label="이야기"></a>
+        <a href="#values" data-section-link aria-label="마음"></a>
+        <a href="#plans" data-section-link aria-label="예식"></a>
+        <a href="#closing" data-section-link aria-label="마무리"></a>
+      </aside>
+
+      <main>
+        <section class="hero section" id="hero" data-section>
+          <div class="hero__glow hero__glow--sage" aria-hidden="true"></div>
+          <div class="hero__glow hero__glow--rose" aria-hidden="true"></div>
+          <div class="hero__sparkles" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="hero__panel" data-reveal="rise">
+            <p class="eyebrow">두 사람의 계절이 천천히 하나의 약속이 되었습니다.</p>
+            <h1>
+              최영찬 그리고 이승현
+              <span>사랑을 과장하지 않고, 가장 닮은 마음을 담아 전합니다.</span>
+            </h1>
+            <p class="hero__message">
+              서로의 하루와 계절을 함께 지나오며, 같은 방향을 바라보는 마음을
+              키워왔습니다. 오늘은 그 다정한 약속을 부모님께 정성스럽게 전해드리고
+              싶습니다.
+            </p>
+            <div class="hero__meta">
+              <div>
+                <strong>일시</strong>
+                <span>2026. 08. 29 오후 1:30</span>
+              </div>
+              <div>
+                <strong>장소</strong>
+                <span>잠실 더컨벤션 비스타홀</span>
+              </div>
+            </div>
+            <p class="hero__hint">아래로 천천히 내려오시면 두 사람의 계절과 약속이 이어집니다.</p>
+          </div>
+          <div class="hero__card" data-reveal="soft">
+            <p class="hero__card-label">A Little Note</p>
+            <div class="quote-block">
+              <p>
+                서로를 향한 마음이 오래도록 잔잔하고 단단하게 이어지기를 바라는
+                마음으로, 오늘의 첫 인사를 준비했습니다.
+              </p>
+            </div>
+            <div class="signature-row">
+              <span>From</span>
+              <strong>최영찬 · 이승현</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="section intro-strip" data-reveal="soft">
+          <p>
+            화려한 표현보다 오래 남는 다정함을 담아, 두 사람의 이야기를 차분히
+            정리했습니다.
+          </p>
+        </section>
+
+        <section class="section profiles" id="profiles" data-section>
+          <div class="section-heading" data-reveal="soft">
+            <p class="eyebrow">About Us</p>
+            <h2>서로를 닮아가며, 두 사람의 결을 소개합니다.</h2>
+          </div>
+
+          <div class="profile-grid">
+            <article class="profile-card" data-reveal="left">
+              <div class="profile-card__portrait">
+                <span>Y</span>
+              </div>
+              <div class="profile-card__body">
+                <p class="profile-card__role">예비신랑</p>
+                <h3>최영찬</h3>
+                <p class="profile-card__summary">
+                  차분하고 책임감 있는 성향으로, 안정적인 일상과 가족 중심의
+                  가치를 중요하게 생각합니다.
+                </p>
+                <ul>
+                  <li>직업: IT 기획</li>
+                  <li>성향: 신중함, 꾸준함, 배려</li>
+                  <li>요즘의 관심: 건강한 생활 습관, 여행 계획</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="profile-card profile-card--warm" data-reveal="right">
+              <div class="profile-card__portrait">
+                <span>S</span>
+              </div>
+              <div class="profile-card__body">
+                <p class="profile-card__role">예비신부</p>
+                <h3>이승현</h3>
+                <p class="profile-card__summary">
+                  밝고 섬세한 성향으로, 대화와 공감을 바탕으로 편안한 관계를
+                  만들어가는 것을 중요하게 생각합니다.
+                </p>
+                <ul>
+                  <li>직업: 브랜드 마케팅</li>
+                  <li>성향: 따뜻함, 성실함, 공감</li>
+                  <li>요즘의 관심: 기록, 공간 꾸미기, 요리</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section story" id="story" data-section>
+          <div class="section-heading" data-reveal="soft">
+            <p class="eyebrow">Our Story</p>
+            <h2>마음이 겹쳐온 시간을 천천히 따라가 봅니다.</h2>
+          </div>
+
+          <div class="timeline">
+            <span class="timeline__progress" aria-hidden="true"></span>
+
+            <article class="timeline__item" data-reveal="left">
+              <span class="timeline__date">2022 Spring</span>
+              <h3>처음 만나 자연스럽게 대화를 시작했습니다.</h3>
+              <p>
+                공통 관심사와 대화의 결이 잘 맞아, 편안한 친구 같은 관계로
+                시작했습니다.
+              </p>
+            </article>
+
+            <article class="timeline__item" data-reveal="right">
+              <span class="timeline__date">2023 Winter</span>
+              <h3>서로의 생활 방식과 가치관을 꾸준히 확인했습니다.</h3>
+              <p>
+                일과 휴식, 가족에 대한 태도에서 비슷한 방향을 가지고 있다는 점을
+                알게 되었습니다.
+              </p>
+            </article>
+
+            <article class="timeline__item" data-reveal="left">
+              <span class="timeline__date">2025 Summer</span>
+              <h3>결혼을 전제로 미래에 대해 구체적으로 대화했습니다.</h3>
+              <p>
+                생활 계획과 준비 과정에 대해 충분히 상의하며 현실적인 방향을
+                함께 정리했습니다.
+              </p>
+            </article>
+
+            <article class="timeline__item" data-reveal="right">
+              <span class="timeline__date">Today</span>
+              <h3>이제 부모님께 정중히 첫 인사를 드립니다.</h3>
+              <p>
+                오늘의 만남이 두 집안 모두에게 편안하고 기쁜 기억으로 남기를
+                바랍니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section values" id="values" data-section>
+          <div class="section-heading" data-reveal="soft">
+            <p class="eyebrow">Shared Values</p>
+            <h2>사랑이 오래 머물 수 있다고 믿게 한 마음들입니다.</h2>
+          </div>
+
+          <div class="value-grid">
+            <article class="value-card" data-reveal="zoom">
+              <p class="value-card__index">01</p>
+              <h3>Respect</h3>
+              <p>
+                서로의 일과 생활 방식을 바꾸려 하기보다 존중하며 조율하는 태도를
+                중요하게 생각합니다.
+              </p>
+            </article>
+
+            <article class="value-card" data-reveal="zoom">
+              <p class="value-card__index">02</p>
+              <h3>Sincerity</h3>
+              <p>
+                작은 약속도 가볍게 넘기지 않고, 꾸준한 대화와 행동으로 신뢰를
+                쌓아왔습니다.
+              </p>
+            </article>
+
+            <article class="value-card" data-reveal="zoom">
+              <p class="value-card__index">03</p>
+              <h3>Stability</h3>
+              <p>
+                화려함보다 안정적인 생활과 건강한 관계를 지향하며, 현실적인
+                계획 속에서 준비하고 있습니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section plans" id="plans" data-section>
+          <div class="section-heading" data-reveal="soft">
+            <p class="eyebrow">Future Plans</p>
+            <h2>앞으로의 날들도 다정하고 안정적으로 채워가려 합니다.</h2>
+          </div>
+
+          <div class="plan-layout">
+            <article class="plan-card" data-reveal="rise">
+              <h3>생활의 방향</h3>
+              <p>
+                서로의 일과 생활 리듬을 존중하면서, 균형 있는 일상을 만드는 것을
+                가장 우선으로 생각하고 있습니다.
+              </p>
+            </article>
+
+            <article class="plan-card" data-reveal="rise">
+              <h3>가족과의 관계</h3>
+              <p>
+                두 집안 모두에 예의를 갖추고, 자주 안부를 나누며 편안한 관계를
+                쌓아가고 싶습니다.
+              </p>
+            </article>
+
+            <article class="plan-card" data-reveal="rise">
+              <h3>결혼 준비</h3>
+              <p>
+                일정과 예산은 무리하지 않는 선에서 차근차근 상의하며 준비해
+                나가려 합니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section closing" id="closing" data-section>
+          <div class="closing__frame" data-reveal="soft">
+            <p class="eyebrow">Closing Note</p>
+            <h2>따뜻한 마음으로 함께해 주셔서 감사합니다.</h2>
+            <p>
+              오늘의 만남이 두 가족에게 오래도록 포근한 기억으로 남고, 앞으로의
+              시간 역시 서로를 아끼는 마음으로 아름답게 이어지기를 바랍니다.
+            </p>
+            <p class="closing__sign">최영찬 · 이승현 드림</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
