@@ -873,7 +873,6 @@ main {
 
 .couple-cards {
   align-content: start;
-  gap: 18px;
 }
 
 .couple-spotlight,
@@ -914,42 +913,6 @@ main {
   transform: scale(1.02);
 }
 
-.couple-spotlight__overlay {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
-  padding: 20px 22px 18px;
-  border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(55, 33, 42, 0.04), rgba(55, 33, 42, 0.72)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  color: rgba(255, 250, 247, 0.98);
-  box-shadow: 0 20px 38px rgba(54, 33, 40, 0.12);
-}
-
-.couple-spotlight__eyebrow {
-  margin: 0 0 10px;
-  font-size: 0.74rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: rgba(255, 233, 227, 0.84);
-}
-
-.couple-spotlight__overlay h3 {
-  margin: 0;
-  font-family: "Noto Serif KR", serif;
-  font-size: clamp(1.4rem, 2vw, 1.85rem);
-  font-weight: 600;
-  line-height: 1.42;
-}
-
-.couple-spotlight__overlay p:last-child {
-  margin: 12px 0 0;
-  line-height: 1.75;
-  color: rgba(255, 246, 243, 0.82);
-}
-
 .couple-spotlight figcaption {
   display: flex;
   justify-content: space-between;
@@ -969,52 +932,6 @@ main {
 .couple-card {
   padding: 24px;
   border-radius: 30px;
-}
-
-.couple-note {
-  position: relative;
-  overflow: hidden;
-  padding: 24px 26px;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at top right, rgba(248, 219, 212, 0.46), transparent 34%),
-    linear-gradient(135deg, rgba(255, 249, 247, 0.96), rgba(251, 236, 233, 0.88));
-  border: 1px solid rgba(202, 168, 177, 0.18);
-  box-shadow: 0 20px 54px rgba(111, 77, 83, 0.08);
-}
-
-.couple-note::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  right: -10px;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
-  pointer-events: none;
-}
-
-.couple-note__eyebrow {
-  margin: 0 0 10px;
-  font-size: 0.8rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--warm);
-}
-
-.couple-note h3 {
-  margin: 0;
-  font-family: "Noto Serif KR", serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-.couple-note p:last-child {
-  margin: 12px 0 0;
-  line-height: 1.85;
-  color: var(--text-soft);
 }
 
 .couple-profile-grid {
@@ -2298,7 +2215,6 @@ main {
   .hero__card,
   .couple-card,
   .couple-spotlight,
-  .couple-note,
   .timeline-board,
   .timeline-note,
   .roadmap,
@@ -2336,17 +2252,6 @@ main {
 
   .timeline-board__today {
     font-size: 0.86rem;
-  }
-
-  .couple-spotlight__overlay {
-    right: 14px;
-    bottom: 14px;
-    left: 14px;
-    padding: 18px 18px 16px;
-  }
-
-  .couple-spotlight__overlay h3 {
-    font-size: 1.28rem;
   }
 
   .couple-profile-grid,
