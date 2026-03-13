@@ -60,6 +60,7 @@
             <span></span>
             <span></span>
           </div>
+
           <div class="hero__panel" data-reveal="rise">
             <p class="eyebrow">두 사람의 계절이 천천히 하나의 약속이 되었습니다.</p>
             <h1>
@@ -68,8 +69,8 @@
             </h1>
             <p class="hero__message">
               서로의 하루와 계절을 함께 지나오며, 같은 방향을 바라보는 마음을
-              키워왔습니다. 오늘은 그 다정한 약속을 부모님께 정성스럽게 전해드리고
-              싶습니다.
+              키워왔습니다. 오늘은 그 다정한 약속을 부모님께 정성스럽게
+              전해드리고 싶습니다.
             </p>
             <div class="hero__meta">
               <div>
@@ -83,11 +84,35 @@
             </div>
             <p class="hero__hint">아래로 천천히 내려오시면 두 사람의 계절과 약속이 이어집니다.</p>
           </div>
+
           <div class="hero__card" data-reveal="soft">
+            <div class="hero__photo-stack" aria-label="두 사람의 스튜디오 사진">
+              <figure class="hero__photo hero__photo--main">
+                <img
+                  src="./image/web/hero-main.jpg"
+                  alt="스튜디오에서 서로 입맞춤하며 미소 짓는 최영찬과 이승현"
+                  loading="eager"
+                />
+              </figure>
+              <figure class="hero__photo hero__photo--detail">
+                <img
+                  src="./image/web/hero-detail.jpg"
+                  alt="부케와 두 사람의 손을 담은 디테일 컷"
+                  loading="lazy"
+                />
+              </figure>
+              <figure class="hero__photo hero__photo--soft">
+                <img
+                  src="./image/web/hero-side.jpg"
+                  alt="꽃을 사이에 두고 서로를 바라보는 최영찬과 이승현"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
             <p class="hero__card-label">A Little Note</p>
             <div class="quote-block">
               <p>
-                서로를 향한 마음이 오래도록 잔잔하고 단단하게 이어지기를 바라는
+                서로를 향한 마음이 오래도록 잔잔하고 단단하게 이어지길 바라는
                 마음으로, 오늘의 첫 인사를 준비했습니다.
               </p>
             </div>
@@ -113,8 +138,12 @@
 
           <div class="profile-grid">
             <article class="profile-card" data-reveal="left">
-              <div class="profile-card__portrait">
-                <span>Y</span>
+              <div class="profile-card__portrait profile-card__portrait--groom">
+                <img
+                  src="./image/web/profile-groom.jpg"
+                  alt="예비신랑 최영찬"
+                  loading="lazy"
+                />
               </div>
               <div class="profile-card__body">
                 <p class="profile-card__role">예비신랑</p>
@@ -132,8 +161,12 @@
             </article>
 
             <article class="profile-card profile-card--warm" data-reveal="right">
-              <div class="profile-card__portrait">
-                <span>S</span>
+              <div class="profile-card__portrait profile-card__portrait--bride">
+                <img
+                  src="./image/web/profile-bride.jpg"
+                  alt="예비신부 이승현"
+                  loading="lazy"
+                />
               </div>
               <div class="profile-card__body">
                 <p class="profile-card__role">예비신부</p>
@@ -197,6 +230,64 @@
               </p>
             </article>
           </div>
+        </section>
+
+        <section class="section moments" data-reveal="soft">
+          <div class="section-heading" data-reveal="soft">
+            <p class="eyebrow">Moments</p>
+            <h2>사진 속에서도 두 사람의 결이 자연스럽게 닮아갑니다.</h2>
+          </div>
+
+          <div class="moments-layout">
+            <figure class="moment-card moment-card--main" data-reveal="left">
+              <div class="moment-card__image">
+                <img
+                  src="./image/web/moment-vow.jpg"
+                  alt="풍선 소품을 들고 서로를 바라보는 최영찬과 이승현"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>서로를 바라보는 눈빛만으로도 충분했던 순간</figcaption>
+            </figure>
+
+            <div class="moments-column">
+              <figure class="moment-card moment-card--garden" data-reveal="right">
+                <div class="moment-card__image">
+                  <img
+                    src="./image/web/moment-garden.jpg"
+                    alt="꽃 장식 앞에서 손을 맞잡고 이야기를 나누는 두 사람"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>차분하게 시선을 맞추며 같은 방향을 확인했던 시간</figcaption>
+              </figure>
+
+              <figure class="moment-card moment-card--playful" data-reveal="right">
+                <div class="moment-card__image">
+                  <img
+                    src="./image/web/moment-playful.jpg"
+                    alt="장난스럽게 볼을 맞대는 최영찬과 이승현"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>가까울수록 더 자연스러워지는 다정한 표정들</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <figure class="detail-banner" data-reveal="soft">
+            <div class="detail-banner__image">
+              <img
+                src="./image/web/moment-detail.jpg"
+                alt="드레스와 정장 위에 부케를 올려둔 두 사람의 디테일 컷"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              오래 남는 기억은 늘 이렇게 작은 디테일 속에도 머무는 것
+              같습니다.
+            </figcaption>
+          </figure>
         </section>
 
         <section class="section values" id="values" data-section>
@@ -273,8 +364,9 @@
             <p class="eyebrow">Closing Note</p>
             <h2>따뜻한 마음으로 함께해 주셔서 감사합니다.</h2>
             <p>
-              오늘의 만남이 두 가족에게 오래도록 포근한 기억으로 남고, 앞으로의
-              시간 역시 서로를 아끼는 마음으로 아름답게 이어지기를 바랍니다.
+              오늘의 만남이 두 가족에게 오래도록 포근한 기억으로 남고,
+              앞으로의 시간 역시 서로를 아끼는 마음으로 아름답게 이어지기를
+              바랍니다.
             </p>
             <p class="closing__sign">최영찬 · 이승현 드림</p>
           </div>

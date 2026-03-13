@@ -4,7 +4,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-git add .gitignore index.html styles.css script.js
+$scriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+& (Join-Path $scriptRoot "prepare-images.ps1")
+
+git add .gitignore deploy.ps1 prepare-images.ps1 index.html styles.css script.js image/web
 
 $hasChanges = git diff --cached --quiet
 if ($LASTEXITCODE -eq 0) {

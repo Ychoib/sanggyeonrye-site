@@ -24,6 +24,11 @@ html {
   scroll-behavior: smooth;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -567,7 +572,7 @@ main {
   justify-self: end;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
   min-height: min(70vh, 560px);
   max-width: 360px;
   padding: 28px;
@@ -591,6 +596,66 @@ main {
   letter-spacing: 0.08em;
   font-style: italic;
   color: var(--berry);
+}
+
+.hero__photo-stack {
+  position: relative;
+  min-height: 332px;
+  padding: 10px 0 14px;
+}
+
+.hero__photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(202, 168, 177, 0.22);
+  background: rgba(255, 251, 250, 0.7);
+  box-shadow: 0 18px 42px rgba(102, 74, 78, 0.12);
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__photo--main {
+  width: min(84%, 286px);
+  margin-left: auto;
+  aspect-ratio: 0.82;
+}
+
+.hero__photo--main img {
+  object-position: center 40%;
+}
+
+.hero__photo--detail,
+.hero__photo--soft {
+  position: absolute;
+}
+
+.hero__photo--detail {
+  left: 0;
+  bottom: 0;
+  width: 43%;
+  aspect-ratio: 0.9;
+  transform: rotate(-5deg);
+}
+
+.hero__photo--detail img {
+  object-position: center 52%;
+}
+
+.hero__photo--soft {
+  top: 32px;
+  left: 12px;
+  width: 38%;
+  aspect-ratio: 0.82;
+  transform: rotate(7deg);
+}
+
+.hero__photo--soft img {
+  object-position: center 42%;
 }
 
 .quote-block {
@@ -700,16 +765,26 @@ main {
   place-items: center;
   aspect-ratio: 0.85;
   border-radius: 24px;
+  overflow: hidden;
   background:
     linear-gradient(180deg, rgba(202, 168, 177, 0.22), rgba(202, 168, 177, 0.06)),
     radial-gradient(circle at 50% 25%, rgba(255, 255, 255, 0.68), transparent 42%);
   border: 1px solid rgba(202, 168, 177, 0.18);
 }
 
-.profile-card__portrait span {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 4.3rem;
-  color: var(--accent);
+.profile-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+
+.profile-card__portrait--groom img {
+  object-position: center 16%;
+}
+
+.profile-card__portrait--bride img {
+  object-position: center 22%;
 }
 
 .profile-card__role {
@@ -819,6 +894,102 @@ main {
   font-size: 1.2rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.moments {
+  padding-top: 92px;
+}
+
+.moments-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.82fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.moments-column {
+  display: grid;
+  gap: 22px;
+}
+
+.moment-card,
+.detail-banner {
+  margin: 0;
+  padding: 12px;
+  border-radius: 30px;
+  background: rgba(255, 248, 246, 0.74);
+  border: 1px solid rgba(202, 168, 177, 0.18);
+  box-shadow: 0 22px 52px rgba(111, 77, 83, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.moment-card__image,
+.detail-banner__image {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.moment-card__image img,
+.detail-banner__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moment-card--main .moment-card__image {
+  aspect-ratio: 1.02;
+}
+
+.moment-card--main img {
+  object-position: center 34%;
+}
+
+.moment-card--garden .moment-card__image,
+.moment-card--playful .moment-card__image {
+  aspect-ratio: 1.08;
+}
+
+.moment-card--garden img {
+  object-position: center 40%;
+}
+
+.moment-card--playful img {
+  object-position: center 38%;
+}
+
+.moment-card figcaption,
+.detail-banner figcaption {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.moment-card figcaption {
+  margin-top: 16px;
+  padding: 0 6px 2px;
+}
+
+.detail-banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
+  gap: 22px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.detail-banner__image {
+  min-height: 220px;
+}
+
+.detail-banner__image img {
+  object-position: center 48%;
+}
+
+.detail-banner figcaption {
+  max-width: 26ch;
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: 1.08rem;
 }
 
 .value-grid {
@@ -953,6 +1124,8 @@ main {
 }
 
 .profile-card.is-visible,
+.moment-card.is-visible,
+.detail-banner.is-visible,
 .value-card.is-visible,
 .plan-card.is-visible,
 .hero__panel.is-visible,
@@ -1081,12 +1254,21 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .moments-layout,
+  .detail-banner {
+    grid-template-columns: 1fr;
+  }
+
   .profile-card {
     grid-template-columns: 1fr;
   }
 
   .profile-card__portrait {
     aspect-ratio: 1.4;
+  }
+
+  .detail-banner figcaption {
+    max-width: none;
   }
 }
 
@@ -1123,6 +1305,8 @@ main {
   .hero__panel,
   .hero__card,
   .profile-card,
+  .moment-card,
+  .detail-banner,
   .value-card,
   .plan-card,
   .closing__frame {
@@ -1135,6 +1319,33 @@ main {
 
   .timeline {
     padding-left: 24px;
+  }
+
+  .hero__photo-stack {
+    min-height: 286px;
+    padding-inline: 4px;
+  }
+
+  .hero__photo--main {
+    width: min(100%, 292px);
+  }
+
+  .hero__photo--detail {
+    width: 45%;
+  }
+
+  .hero__photo--soft {
+    left: 6px;
+    width: 40%;
+  }
+
+  .moment-card,
+  .detail-banner {
+    padding: 10px;
+  }
+
+  .detail-banner__image {
+    min-height: 180px;
   }
 }
 
