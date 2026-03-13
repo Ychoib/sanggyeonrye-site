@@ -1,6 +1,6 @@
 param(
-  [int]$DefaultLongEdge = 1800,
-  [int]$Quality = 88
+  [int]$DefaultLongEdge = 2600,
+  [int]$Quality = 94
 )
 
 $ErrorActionPreference = "Stop"
@@ -48,7 +48,8 @@ function Save-WebImage {
     [string]$SourceName,
     [string]$SourcePath,
     [string]$OutputName,
-    [int]$LongEdge = $DefaultLongEdge
+    [int]$LongEdge = $DefaultLongEdge,
+    [int]$JpegQuality = $Quality
   )
 
   if ($SourcePath) {
@@ -91,7 +92,7 @@ function Save-WebImage {
         $encoderParams = New-Object System.Drawing.Imaging.EncoderParameters(1)
         $encoderParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter(
           [System.Drawing.Imaging.Encoder]::Quality,
-          [long]$Quality
+          [long]$JpegQuality
         )
 
         try {
@@ -117,30 +118,30 @@ function Save-WebImage {
 }
 
 $images = @(
-  @{ Source = "DOO_0220.jpg"; Output = "hero-main.jpg"; LongEdge = 1800 }
-  @{ Source = "KakaoTalk_20260313_232730849_06.jpg"; Output = "hero-detail.jpg"; LongEdge = 1200 }
-  @{ Source = "KakaoTalk_20260313_232730849_01.jpg"; Output = "hero-side.jpg"; LongEdge = 1400 }
-  @{ SourcePattern = "*.jpg"; ExcludeRegex = "^(DOO_|KakaoTalk_)"; Output = "profile-groom.jpg"; LongEdge = 1400 }
-  @{ Source = "DOO_0362.jpg"; Output = "profile-bride.jpg"; LongEdge = 1400 }
-  @{ Source = "DOO_0198.jpg"; Output = "moment-vow.jpg"; LongEdge = 1800 }
-  @{ Source = "DOO_0298.jpg"; Output = "moment-garden.jpg"; LongEdge = 1600 }
-  @{ Source = "KakaoTalk_20260313_232730849_04.jpg"; Output = "moment-playful.jpg"; LongEdge = 1600 }
-  @{ Source = "KakaoTalk_20260313_232730849_06.jpg"; Output = "moment-detail.jpg"; LongEdge = 1600 }
+  @{ Source = "DOO_0220.jpg"; Output = "hero-main.jpg"; LongEdge = 2800; Quality = 96 }
+  @{ Source = "KakaoTalk_20260313_232730849_06.jpg"; Output = "hero-detail.jpg"; LongEdge = 1800; Quality = 95 }
+  @{ Source = "KakaoTalk_20260313_232730849_01.jpg"; Output = "hero-side.jpg"; LongEdge = 2200; Quality = 95 }
+  @{ SourcePattern = "*.jpg"; ExcludeRegex = "^(DOO_|KakaoTalk_)"; Output = "profile-groom.jpg"; LongEdge = 2200; Quality = 95 }
+  @{ Source = "DOO_0362.jpg"; Output = "profile-bride.jpg"; LongEdge = 2200; Quality = 95 }
+  @{ Source = "DOO_0198.jpg"; Output = "moment-vow.jpg"; LongEdge = 2800; Quality = 96 }
+  @{ Source = "DOO_0298.jpg"; Output = "moment-garden.jpg"; LongEdge = 2400; Quality = 95 }
+  @{ Source = "KakaoTalk_20260313_232730849_04.jpg"; Output = "moment-playful.jpg"; LongEdge = 2200; Quality = 95 }
+  @{ Source = "KakaoTalk_20260313_232730849_06.jpg"; Output = "moment-detail.jpg"; LongEdge = 2200; Quality = 95 }
 )
 
 if ($extraPhotoDir) {
   $images += @(
-    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0001.jpg"); Output = "backdrop-hero.jpg"; LongEdge = 1800 }
-    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0080.jpg"); Output = "backdrop-bloom.jpg"; LongEdge = 1800 }
-    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_1015.jpg"); Output = "backdrop-closing.jpg"; LongEdge = 1800 }
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0001.jpg"); Output = "backdrop-hero.jpg"; LongEdge = 2200; Quality = 92 }
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_0080.jpg"); Output = "backdrop-bloom.jpg"; LongEdge = 2200; Quality = 92 }
+    @{ SourcePath = (Join-Path $extraPhotoDir "DOO_1015.jpg"); Output = "backdrop-closing.jpg"; LongEdge = 2200; Quality = 92 }
   )
 }
 
 if ($dailyPhotoDir) {
   $images += @(
-    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_02.jpg"); Output = "daily-backdrop-1.jpg"; LongEdge = 1400 }
-    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_03.jpg"); Output = "daily-backdrop-2.jpg"; LongEdge = 1400 }
-    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_01.jpg"); Output = "daily-backdrop-3.jpg"; LongEdge = 1400 }
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_02.jpg"); Output = "daily-backdrop-1.jpg"; LongEdge = 2000; Quality = 94 }
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_03.jpg"); Output = "daily-backdrop-2.jpg"; LongEdge = 2000; Quality = 94 }
+    @{ SourcePath = (Join-Path $dailyPhotoDir "KakaoTalk_20260314_002259250_01.jpg"); Output = "daily-backdrop-3.jpg"; LongEdge = 2000; Quality = 94 }
   )
 }
 
@@ -158,5 +159,5 @@ foreach ($item in $images) {
     }
   }
 
-  Save-WebImage -SourceName $sourceName -SourcePath $sourcePath -OutputName $item.Output -LongEdge $item.LongEdge
+  Save-WebImage -SourceName $sourceName -SourcePath $sourcePath -OutputName $item.Output -LongEdge $item.LongEdge -JpegQuality $item.Quality
 }
